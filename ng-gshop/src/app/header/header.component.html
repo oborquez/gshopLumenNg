@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1" routerLink=''><i class="fa fa-gift"></i> Gift Shop</span>
+</nav>
+
+<div class="row">
+    <div class="col-lg-12 mx-auto user-buttons" >
+        <div class="float-right"  (click)="logout()"><i class="fa fa-sign-out-alt"></i> </div>
+        <div class="float-right" *ngIf='userData.name'><i class="fa fa-user"></i> {{userData.name}}</div>
+        <div class="float-right" routerLink='signin' *ngIf='!userData.name' ><i class="fa fa-signin"></i> Login</div>
+        <div class="float-right"><a routerLink='cart'> <i class="fa fa-shopping-cart"></i></a> </div>
+    </div>
+    
+</div>
+
+
+
+
+
+

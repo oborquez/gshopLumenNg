@@ -1,0 +1,52 @@
+
+<div class="pg-cart">
+
+<h3> <i class="fa fa-shopping-cart"></i> Shopping Cart</h3>
+<div class="row">
+    <div class="col-lg-12 mx-auto">
+        <!-- List group-->
+        <ul class="list-group shadow">
+            <!-- list group item-->
+            <li class="list-group-item" *ngFor="let product of products; let i = index">
+                <!-- Custom content-->
+                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                    <div class="media-body order-2 order-lg-1">
+                        <h5 class="mt-0 font-weight-bold mb-2">{{product.name}}</h5>
+                        <p class="font-italic text-muted mb-0 small">{{product.description}}</p>
+                        <div class="d-flex align-items-center justify-content-between mt-1">
+                            <h6 class="font-weight-bold my-2">${{product.price}}</h6>
+                            <ul class="list-inline small">
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                            </ul>
+                        </div>
+                        
+                        <button (click)="onRmvFromCart(i)" type="button" class="btn btn-danger rmv-from-cart"> <i class="fa fa-shopping-cart"></i> Remove from cart</button>
+
+                    </div>
+                    <div class="ml-lg-5 order-1 order-lg-2 gift-icon">
+                        <i class="fa fa-gift "></i> 
+                    </div>
+                    
+
+                </div> <!-- End -->
+            </li> <!-- End -->
+            <!-- list group item-->
+        </ul> <!-- End -->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 mx-auto amopunt-box">
+            <h5 class="mt-0 font-weight-bold mb-2 float-right" >Total: {{amount}}</h5>
+            
+    </div>
+    <div class="col-lg-12 mx-auto">
+        <button (click)="onClickPay()" type="button" class="btn btn-primary float-right"> <i class="fa fa-credit-card"></i> Pay Now </button>   
+    </div>
+</div>
+
+</div>
